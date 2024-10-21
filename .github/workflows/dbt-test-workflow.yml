@@ -1,0 +1,23 @@
+name: dbt-test-worklow
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo "The ${{ github.repository }} repository has been closed to the runner/"
+
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}
+      - run: echo "This job's status is ${{ job.status }}."
