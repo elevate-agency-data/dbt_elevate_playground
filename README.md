@@ -9,8 +9,10 @@ Check this link to install python on your machine: https://www.python.org/downlo
 Recommended version: **3.9.XX**
 
 Create a virutal environment and activate it with the following commands: \
-`python -m venv my_env_name` \
- `my_env_name\Scripts\activate`
+```
+python -m venv my_env_name
+my_env_name\Scripts\activate
+```
 
 ### 3. VSCODE INSTALLATION
 https://code.visualstudio.com/docs/setup/windows
@@ -27,12 +29,12 @@ Connect with your personal Credentials.
 You are almost ready to use dbt playground… oh wait… where is it ? \
 **Start your preferred shell (git bash for Windows, terminal)**
 
-**Create dbt main folder** \
+**Create dbt main folder** 
 ```
 mkdir dbt
 ```
 
-**Change WORKDIR** \
+**Change WORKDIR** 
 ```
 cd dbt
 ```
