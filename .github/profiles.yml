@@ -8,7 +8,8 @@ dbt_elevate_playground:
       method: oauth
       project: elevate-eng-lab-core
       priority: interactive
-      schema: dbt_dataset_test
+      schema: "dbt_dataset_test"
+      database: elevate-eng-lab-core
       threads: 10
       type: bigquery
-      maximum_bytes_billed: 100000000
+      execution_project: elevate-eng-lab-core
