@@ -1,0 +1,36 @@
+name: Validate DBT code
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-dbt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: |
+          python -m venv dbt-env
+          source dbt-env/bin/activate
+          pip install dbt-core dbt-bigquery sqlflull
+
+      - name: Validate dbt
+        run: |
+          source dbt-env/bin/activate
+          dbt debug
+          dbt compile
+
+      - name: Lint SQL
+        run: |
+          source dbt-env/bin/activate
+          sqlfluff lint .
