@@ -24,7 +24,7 @@ jobs:
         run: |
           python -m venv dbt-env
           source dbt-env/bin/activate
-          pip install dbt-core dbt-bigquery sqlflull
+          pip install dbt-core dbt-bigquery sqlfluff
 
       - name: Validate dbt
         run: |
