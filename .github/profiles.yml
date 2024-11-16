@@ -1,0 +1,14 @@
+dbt_elevate_playground:
+  target: dev
+  outputs:
+    dev:
+      job_execution_timeout_seconds: 600
+      job_retries: 1
+      location: EU
+      method: oauth
+      project: elevate-eng-lab-core
+      priority: interactive
+      schema: dbt_dataset_test
+      threads: 10
+      type: bigquery
+      maximum_bytes_billed: 100000000
