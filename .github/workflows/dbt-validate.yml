@@ -28,13 +28,14 @@ jobs:
 
       - name: Set-Up DBT_PROFILES_DIR
         run: |
-          export DBT_PROFILES_DIR=$(pwd)/.github
-          echo "DBT_PROFILES_DIR=$(pwd)/.github" >> GITHUB_ENV
-          
-      - name: Check if dbt profiles is detected
+          export DBT_PROFILES_DIR=$(pwd)/.github/
+          echo "DBT_PROFILES_DIR=$(pwd)/.github/" >> GITHUB_ENV
+
+      - name: Debug DBT_PROFILES_DIR
         run: |
-          echo "DBT_PROFILES_DIR=$DBT_PROFILES_DIR"
-          ls -la "$DBT_PROFILES_DIR/profiles.yml"
+          echo "Value of DBT_PROFILES_DIR: $DBT_PROFILES_DIR"
+          echo "GITHUB_ENV contains:"
+          cat $GITHUB_ENV
 
       - name: Validate dbt
         run: |
