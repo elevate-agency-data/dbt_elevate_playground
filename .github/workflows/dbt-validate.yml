@@ -34,7 +34,7 @@ jobs:
       - name: Check if dbt profiles is detected
         run: |
           echo "DBT_PROFILES_DIR=$DBT_PROFILES_DIR"
-          ls -la $DBT_PROFILES_DIR/profiles.yml"
+          ls -la "$DBT_PROFILES_DIR/profiles.yml"
 
       - name: Validate dbt
         run: |
