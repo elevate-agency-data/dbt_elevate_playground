@@ -26,6 +26,10 @@ jobs:
           source dbt-env/bin/activate
           pip install dbt-core dbt-bigquery sqlfluff
 
+      - name: Set-Up DBT_PROFILES_DIR
+        run: |
+          echo "DBT_PROFILES_DIR" >> GITHUB_ENV
+
       - name: Validate dbt
         run: |
           source dbt-env/bin/activate
