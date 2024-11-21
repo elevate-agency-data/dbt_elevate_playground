@@ -32,9 +32,14 @@ jobs:
           echo "DBT_PROFILES_DIR=$(pwd)/.github" >> $GITHUB_ENV
 
       - name: Authenticate with Google Cloud
-        uses: google-github-actions/auth@v0
+        uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
+          create_credentials: true
+          export_environment_variables: true
+          cleanup_credentials: true
+          access_token_lifetime: 3600
+          retries: 0
           
       - name: Validate dbt
         env:
