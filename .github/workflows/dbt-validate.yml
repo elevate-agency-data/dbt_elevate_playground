@@ -29,7 +29,12 @@ jobs:
       - name: Set-Up DBT_PROFILES_DIR
         run: |
           export DBT_PROFILES_DIR=$(pwd)/.github/
-          echo "DBT_PROFILES_DIR=$(pwd)/.github/" >> GITHUB_ENV
+          echo "DBT_PROFILES_DIR=$(pwd)/.github/" >> $GITHUB_ENV
+
+      - name: Debug all env variables
+        run: |
+          echo "List all env variables"
+          env
 
       - name: Debug DBT_PROFILES_DIR
         run: |
