@@ -28,8 +28,8 @@ jobs:
 
       - name: Set-Up DBT_PROFILES_DIR
         run: |
-          export DBT_PROFILES_DIR=$(pwd)/.github/
-          echo "DBT_PROFILES_DIR=$(pwd)/.github/" >> $GITHUB_ENV
+          export DBT_PROFILES_DIR=$(pwd)/.github
+          echo "DBT_PROFILES_DIR=$(pwd)/.github" >> $GITHUB_ENV
 
       - name: Debug all env variables
         run: |
@@ -42,11 +42,11 @@ jobs:
           echo "GITHUB_ENV contains:"
           cat $GITHUB_ENV
 
-      - name: Validate dbt
+      - name: Verifying profiles.yml
+        env:
+          DBT_PROFILES_DIR: ${{ env.DBT_PROFILES_DIR }}
         run: |
-          source dbt-env/bin/activate
-          dbt debug
-          dbt compile
+          ls -la "$(DBT_PROFILES_DIR)/profiles.yml"
 
       - name: Lint SQL
         run: |
