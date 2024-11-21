@@ -46,7 +46,7 @@ jobs:
         env:
           DBT_PROFILES_DIR: ${{ env.DBT_PROFILES_DIR }}
         run: |
-          ls -la "$(DBT_PROFILES_DIR)/profiles.yml"
+          ls -la "$DBT_PROFILES_DIR/profiles.yml"
 
       - name: Lint SQL
         run: |
