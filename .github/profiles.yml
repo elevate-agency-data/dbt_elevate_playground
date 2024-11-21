@@ -8,7 +8,7 @@ dbt_elevate_playground:
       method: oauth
       project: elevate-eng-lab-core
       priority: interactive
-      database: dbt_dataset_test
+      schema: "dbt_dataset_test"
       threads: 10
       type: bigquery
       impersonate_service_account: dbt-lab@elevate-eng-lab-core.iam.gserviceaccount.com
