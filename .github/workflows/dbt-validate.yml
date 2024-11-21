@@ -28,6 +28,7 @@ jobs:
 
       - name: Set-Up DBT_PROFILES_DIR
         run: |
+          export DBT_PROFILES_DIR=$(pwd)/.github
           echo "DBT_PROFILES_DIR=$(pwd)/.github" >> GITHUB_ENV
           
       - name: Check if dbt profiles is detected
