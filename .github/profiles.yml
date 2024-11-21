@@ -12,4 +12,5 @@ dbt_elevate_playground:
       database: elevate-eng-lab-core
       threads: 10
       type: bigquery
+      impersonate_service_account: dbt-lab@elevate-eng-lab-core.iam.gserviceaccount.com
       execution_project: elevate-eng-lab-core
