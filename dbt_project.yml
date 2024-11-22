@@ -24,3 +24,8 @@ vars:
     lab:
       dev: elevate-eng-lab-core
 
+
+seeds:
+  dbt_elevate_playground:
+    schema: "dbt_seed"
+
