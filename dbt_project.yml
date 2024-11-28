@@ -23,8 +23,7 @@ vars:
   gcp_projects:
     lab:
       dev: elevate-eng-lab-core
-  dbt_username : "username_here" # <-- Modifiez l'username ici
-
+  dbt_username : "EricZ"
 
 seeds:
   dbt_elevate_playground:
