@@ -5,6 +5,7 @@
         {%- set model_path_str = node.path | string -%}
         {%- set normalized_path = model_path_str.replace('\\', '/') -%}
         {%- set folder_name = normalized_path.split('/')[-2] -%}
+        {{ log("Folder name : " ~ normalized_path) }}
         {{ username }}_{{ folder_name }}
     {%- else -%}
         {{ default_schema }}_{{ custom_schema_name | trim }}
