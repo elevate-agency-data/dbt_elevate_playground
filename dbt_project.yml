@@ -29,3 +29,9 @@ seeds:
   dbt_elevate_playground:
     schema: "dbt_seed"
 
+models:
+  dbt_elevate_playground:
+    staging:
+      +materialized: view
+    marts: 
+      +materialized : table
