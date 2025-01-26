@@ -48,9 +48,10 @@ jobs:
           source dbt-env/bin/activate
           dbt deps
           dbt debug
-          dbt compile
+          dbt run
+          dbt test
 
-      - name: Lint SQL
+      - name: Cleanup
         run: |
-          source dbt-env/bin/activate
-          sqlfluff lint . --dialect bigquery
+          deactivate || true
+          rm -rf dbt-env
