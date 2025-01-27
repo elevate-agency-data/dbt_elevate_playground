@@ -24,6 +24,7 @@ vars:
     lab:
       dev: elevate-eng-lab-core
   dbt_username : "EricZ"
+  dbt_username : "EricZ"
 
 seeds:
   dbt_elevate_playground:
