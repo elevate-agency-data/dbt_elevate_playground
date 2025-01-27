@@ -34,5 +34,5 @@ models:
   dbt_elevate_playground:
     staging:
       +materialized: view
-    marts: 
+    app: 
       +materialized : table
