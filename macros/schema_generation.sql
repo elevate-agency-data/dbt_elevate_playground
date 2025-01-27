@@ -1,5 +1,4 @@
 {% macro generate_schema_name(custom_schema_name, node) -%}
-    {% set username = var('dbt_username') %}
     {%- set default_schema = target.schema -%} 
     {%- if custom_schema_name is none -%}
         {%- set model_path_str = node.path | string -%}
