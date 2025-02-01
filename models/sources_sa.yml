@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: gcp_lab_sa_datasources
+    database: '{{- var("gcp_projects")["sa"]["dev"][target.name] -}}'
+    schema: dataset_for_test
+    tables:
+      - name: test_table_sa
+        identifier: test_table_sa
