@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: gcp_lab_sa_datasources
+    database: '{{ var("gcp_projects")["sa"]["dev"] }}'
+    schema: source_dbt
+    tables:
+      - name: this_is_a_table_test
+        identifier: this_is_a_table_test

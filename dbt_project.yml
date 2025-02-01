@@ -19,10 +19,18 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+models:
+  +persist_docs:
+    relation: true
+    columns: true
+    
 vars:
   gcp_projects:
     lab:
       dev: elevate-eng-lab-core
+    sa:
+      dev: elevate-eng-lab-sa
+
 
 
 seeds:
